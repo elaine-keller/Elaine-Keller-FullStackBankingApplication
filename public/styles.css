@@ -1,0 +1,17 @@
+body {
+    background: #648880;
+    background: linear-gradient(to right, #c2d5ee, #f0f6fd, #c2d5ee);
+}
+
+/* Styling for Table */
+    .table {
+        color: #333333
+    }
+ 
+    .img-fluid{
+         width: 70%;  height: auto;  
+    }
+
+    .nav-item-btn{
+        padding-left: .5em;
+    }
