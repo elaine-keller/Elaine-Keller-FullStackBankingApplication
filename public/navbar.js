@@ -55,7 +55,7 @@ function Nav(props){
                          <ul className="navbar-nav mr-auto">
 
                               <li className="nav-item">
-                                   <Link className ="nav-link" to ="/mybalance/">My Balance</Link>
+                                   <Link className ="nav-link disabled" to ="/mybalance/">My Balance</Link>
                               </li> 
                               
                               <li className="nav-item">
@@ -66,7 +66,7 @@ function Nav(props){
                               </li>
                               
                               <li className="nav-item">
-                                   <Link className ="nav-link" to ="/alldata/">All Data</Link>
+                                   <Link className ="nav-link disabled" to ="/alldata/">All Data</Link>
                               </li>
                          </ul>
                          
