@@ -12,7 +12,7 @@ MongoClient.connect(urlMongoDB, {useUnifiedTopology: true}, function(err, client
     console.log("Connected successfully to db server");
 
     // connect to myproject database
-    db = client.db(dbName);
+    db = client.db('badbank');
 });
 
 // create user account
