@@ -24,30 +24,14 @@ function create(name, email, password) {
                 document,
                 {w:1},
                 function(err, document) {
-                console.log('Document inserted for ' + document + '. ' + 'Open the Studio 3T app and look for database named ' + dbName +' then collection named ' + collectionName)
+                console.log('Document inserted for ' + document + '. ' + 'Open Atlas MongoDB find  ' + dbName +' then collection named ' + collectionName)
                 err ? reject(err) : resolve(document);
                 }
             )
     })
 }
 
-// find user with given email and password, returns an empty array if doesn't exist
-/*
-function login(email, password) {
-    return new Promise((resolve, reject) => {
-        const collection = db.collection('users');        
-        collection.find({
-            $and: [
-                {"email": {$eq: email}}, 
-                {"password": {$eq: password}}
-            ]
-        })
-        .toArray(function(err, docs) {
-            err ? reject(err) : resolve(docs);
-        }); 
-    });   
-}
-*/
+// login to an account
 function login(email, password) {
     return new Promise((resolve, reject) => {
         const authorizedUser = db
@@ -94,7 +78,7 @@ function depositOrWithdraw(email, amount){
                 { $inc: { balance: amount}},
                 { returnDocument: "after" },
                 function (err, document) {
-                    console.log('$' + amount + 'to balance for ' + email + document.value.balance + ' Open the Studio 3T app and look for database named ' + dbName +' then collection named ' + collectionName)
+                    console.log('$' + amount + 'to balance for ' + email + document.value.balance + ' Open Atlas MongoDB find ' + dbName +' then collection named ' + collectionName)
                     //err ? reject(err) : affected(document);
                     err ? reject(err) : resolve(document)
                 }
