@@ -1,12 +1,31 @@
-const MongoClient = require('mongodb').MongoClient;
+
+const { MongoClient } = require('mongodb');
+
+async function main() {
+
 //const urlMongoDB = "mongodb+srv://cluster0.vwmeavx.mongodb.net/?authSource=%24external&authMechanism=MONGODB-X509&retryWrites=true&w=majority";
 const urlMongoDB = "mongodb+srv://elaineck:Cr4feMlKVBTTv8za@cluster0.vwmeavx.mongodb.net/?retryWrites=true&w=majority";
+const client = new MongoClient(urlMongoDB);
+try {
+    // Connect to the MongoDB cluster
+    await client.connect();
+    console.log("Connected successfully to db server");
+// Make the appropriate DB calls
+
+} finally {
+    // Close the connection to the MongoDB cluster
+    await client.close();
+}
+}
+main().catch(console.error);
+
+
 //const url         = 'mongodb://localhost:27017';
 let db            = null;
 let collectionName ='users'
 const dbName = "badbank";
 
- 
+/* 
 // connect to mongo
 MongoClient.connect(urlMongoDB, {useUnifiedTopology: true}, function(err, client) {
     console.log("Connected successfully to db server");
@@ -14,6 +33,7 @@ MongoClient.connect(urlMongoDB, {useUnifiedTopology: true}, function(err, client
     // connect to myproject database
     db = client.db(dbName);
 });
+*/
 
 // create user account
 function create(name, email, password) {
