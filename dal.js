@@ -1,5 +1,6 @@
 const MongoClient = require('mongodb').MongoClient;
-const urlMongoDB = "mongodb+srv://elaineck:Cr4feMlKVBTTv8za@cluster0.vwmeavx.mongodb.net/?retryWrites=true&w=majority";
+const urlMongoDB = "mongodb+srv://cluster0.vwmeavx.mongodb.net/?authSource=%24external&authMechanism=MONGODB-X509&retryWrites=true&w=majority";
+//const urlMongoDB = "mongodb+srv://elaineck:Cr4feMlKVBTTv8za@cluster0.vwmeavx.mongodb.net/?retryWrites=true&w=majority";
 //const url         = 'mongodb://localhost:27017';
 let db            = null;
 let collectionName ='users'
