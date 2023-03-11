@@ -19,7 +19,7 @@ MongoClient.connect(urlMongoDB, {useUnifiedTopology: true}, function(err, client
 function create(name, email, password) {
     return new Promise((resolve, reject) => { ;
         const document = {name, email, password, balance: 0};
-        const collection = await db
+        const collection = db
             .collection(collectionName)
             .insertOne(
                 document,
@@ -40,7 +40,7 @@ function login(email, password) {
             .find({ email: email, password: password})
             .toArray(function(err, document) {
                 console.log('array of logged in account document = ',document )
-                err ? reject(err) : resolve(document)node 
+                err ? reject(err) : resolve(document) 
             });
     });
 }
